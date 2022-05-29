@@ -1,5 +1,7 @@
 ﻿#include <iostream>
+#include <vector>
 #include "Student.h"
+#include "VectorHelper.h"
 
 using namespace std;
 
@@ -13,20 +15,34 @@ void PrintArrayOfStudents(Student arr[15])
     }
     cout << endl;
 }
+void PrintVectorElements(vector<Student> vector)
+{
+    for (int i = 0; i < vector.size(); i++)
+    {
+        cout << vector[i].Name << endl;
+        cout << vector[i].age << endl;
+        cout << vector[i].gropupNumber << endl;
+    }
+}
 int main()
 {
     Student students[15] = 
     {
-        Student{ "Student-1", 16, "G1" },
-        Student{ "Student-2", 16, "G1" },
-        Student{ "Student-3", 18, "G2" },
-        Student{ "Student-4", 17, "G2" },
-        Student{ "Student-5", 18, "G3" },
-        Student{ "Student-6", 17, "G3" },
-        Student{ "Student-7", 19, "G4" },
-        Student{ "Student-8", 18, "G4" },
-        Student{ "Student-9", 19, "G5" },
-        Student{ "Student-10", 20, "G5" }
+        Student{ "aStudent-1", 16, "G1" },
+        Student{ "dStudent-2", 16, "G1" },
+        Student{ "dStudent-3", 18, "G2" },
+        Student{ "bStudent-4", 17, "G2" },
+        Student{ "cStudent-5", 18, "G3" },
+        Student{ "aStudent-6", 17, "G3" },
+        Student{ "cStudent-7", 19, "G4" },
+        Student{ "dStudent-8", 18, "G4" },
+        Student{ "bStudent-9", 19, "G5" },
+        Student{ "xStudent-10", 20, "G5" }
     };
-    PrintArrayOfStudents(students);
+    VectorHelper vectH;
+    vectH.InsertArrayInVector(students, 10);
+    vectH.SortVectorByNameStudents();
+    vector<Student> vect = vectH.GetStudentsInVector();
+    PrintVectorElements(vect);
+    //PrintArrayOfStudents(students);
 }

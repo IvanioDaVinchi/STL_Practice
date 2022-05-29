@@ -5,7 +5,8 @@
 class VectorHelper
 {
 	public:
-		bool CompareForWords(Student, Student);
+		bool comp(std::vector<Student>, std::vector<Student>);
+		bool CompareForNumbers(Student, Student);
 		void AddNewStudentInVector(std::string, int, std::string);
 		
 		void InsertArrayInVector(Student* arr, int);

@@ -1,12 +1,17 @@
 #include "VectorHelper.h"
 #include <algorithm>
-bool comp(std::string f, std::string s)
+#include <vector>
+
+auto comp_words = [&](Student st1, Student st2) {return st1.Name[0] < st2.Name[0]; };
+auto comp_age = [&](Student st1, Student st2) {return st1.age < st2.age; };
+
+bool VectorHelper::comp(std::vector<Student> vec1, std::vector<Student> vec2)
 {
-	
+	return vec1[0].Name[0] < vec2[0].Name[0];
 }
-bool VectorHelper::CompareForWords(Student st1, Student st2)
+bool VectorHelper::CompareForNumbers(Student st1, Student st2)
 {
-	return st1.Name[0] > st2.Name[0];
+	return st1.age < st2.age;
 }
 void VectorHelper::AddNewStudentInVector(std::string name, int age, std::string group)
 {
@@ -23,20 +28,17 @@ void VectorHelper::InsertArrayInVector(Student* arr, int n)
 
 void VectorHelper::SortVectorByNameStudents()
 {
-	for (int i = 0; i < vect.size() -1; i++)
-	{
-		std::sort(vect[i], vect[i+1], CompareForWords);
-	}
+	std::sort(vect.begin(), vect.end(), comp_words);
 }
 
 void VectorHelper::SortVectorByAge()
 {
-
+	std::sort(vect.begin(), vect.end(), comp_age);
 }
 
 std::vector<Student> VectorHelper::GetStudentsInVector()
 {
-	return std::vector<Student>();
+	return vect;
 }
 
 void VectorHelper::GetStudentsInArray(Student* arr)
