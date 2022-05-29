@@ -2,6 +2,8 @@
 #include <vector>
 #include "Student.h"
 #include "VectorHelper.h"
+#include "ListHelper.h"
+#include <list>
 
 using namespace std;
 
@@ -24,6 +26,15 @@ void PrintVectorElements(vector<Student> vector)
         cout << vector[i].gropupNumber << endl;
     }
 }
+void PrintList(list<Student> list)
+{
+    for (auto it : list)
+    {
+        cout << it.Name << endl;
+        cout << it.age << endl;
+        cout << it.gropupNumber << endl;
+    }
+}
 int main()
 {
     Student students[15] = 
@@ -39,10 +50,14 @@ int main()
         Student{ "bStudent-9", 19, "G5" },
         Student{ "xStudent-10", 20, "G5" }
     };
-    VectorHelper vectH;
-    vectH.InsertArrayInVector(students, 10);
-    vectH.SortVectorByNameStudents();
-    vector<Student> vect = vectH.GetStudentsInVector();
-    PrintVectorElements(vect);
+    ListHelper listH;
+    listH.InsertArrayInList(students, 10);
+    list<Student> list = listH.GetListStudents();
+    PrintList(list);
+    //VectorHelper vectH;
+    //vectH.InsertArrayInVector(students, 10);
+    //vectH.SortVectorByNameStudents();
+    //vector<Student> vect = vectH.GetStudentsInVector();
+    //PrintVectorElements(vect);
     //PrintArrayOfStudents(students);
 }

@@ -139,10 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ListHelper.cpp" />
     <ClCompile Include="STL_Practice.cpp" />
     <ClCompile Include="VectorHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ListHelper.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="VectorHelper.h" />
   </ItemGroup>
