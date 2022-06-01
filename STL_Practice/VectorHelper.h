@@ -18,6 +18,7 @@ class VectorHelper
 		std::vector<Student> GetStudentsInVector();
 
 		void GetStudentsInArray(Student *arr);
+		void DeleteStudentByName(std::string);
 	private:
 		std::vector<Student> vect;
 };

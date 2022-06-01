@@ -48,3 +48,18 @@ void VectorHelper::GetStudentsInArray(Student* arr)
 		arr[i] = vect[i];
 	}
 }
+
+void VectorHelper::DeleteStudentByName(std::string name)
+{
+	if (!vect.empty())
+	{
+		for (auto it = vect.begin(); it != vect.end(); it++)
+		{
+			if ((*it).Name == name)
+			{
+				vect.erase(it);
+				break;
+			}
+		}
+	}
+}
