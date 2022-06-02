@@ -4,6 +4,8 @@
 #include "VectorHelper.h"
 #include "ListHelper.h"
 #include <list>
+#include <set>
+#include "SetHelper.h"
 
 using namespace std;
 
@@ -35,6 +37,13 @@ void PrintList(list<Student> list)
         cout << it.gropupNumber << endl;
     }
 }
+void PrintSetCollection(set<int> s)
+{
+    for (auto item : s)
+    {
+        cout << item << endl;
+    }
+}
 int main()
 {
     Student students[15] = 
@@ -54,6 +63,27 @@ int main()
     listH.InsertArrayInList(students, 10);
     list<Student> list = listH.GetListStudents();
     PrintList(list);
+    SetHelper setH;
+    setH.AddNewElementOnSet(7);
+    setH.AddNewElementOnSet(3);
+    setH.AddNewElementOnSet(12);
+    setH.AddNewElementOnSet(2);
+    setH.AddNewElementOnSet(18);
+    setH.AddNewElementOnSet(5);
+    set<int> s = setH.GetSetCollection();
+    PrintSetCollection(s);
+    try 
+    {
+        setH.DeleteElementByValue(12);
+        setH.RemoveElementFromBeginToValue(7);
+    }
+    catch(exception err)
+    {
+        err.what();
+    }
+    s = setH.GetSetCollection();
+    cout << "**************" << endl;
+    PrintSetCollection(s);
     //VectorHelper vectH;
     //vectH.InsertArrayInVector(students, 10);
     //vectH.SortVectorByNameStudents();
