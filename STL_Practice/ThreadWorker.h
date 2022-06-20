@@ -2,6 +2,6 @@
 #include <thread>
 class ThreadWorker
 {
-
+	
 };
 

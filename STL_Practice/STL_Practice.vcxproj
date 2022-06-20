@@ -139,15 +139,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DoublyLinkedList.cpp" />
     <ClCompile Include="ListHelper.cpp" />
     <ClCompile Include="SetHelper.cpp" />
     <ClCompile Include="STL_Practice.cpp" />
+    <ClCompile Include="StructList.cpp" />
+    <ClCompile Include="ThreadWorker.cpp" />
     <ClCompile Include="VectorHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DoublyLinkedList.h" />
     <ClInclude Include="ListHelper.h" />
     <ClInclude Include="SetHelper.h" />
     <ClInclude Include="Student.h" />
+    <ClInclude Include="ThreadWorker.h" />
     <ClInclude Include="VectorHelper.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
