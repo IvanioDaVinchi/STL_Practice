@@ -3,12 +3,13 @@
 #include "Student.h"
 #include "VectorHelper.h"
 #include "ListHelper.h"
-#include <list>
+//#include <list>
 #include <set>
 #include "SetHelper.h"
+#include "StructList.h"
+#include "DoublyLinkedList.h"
 
 using namespace std;
-
 void PrintArrayOfStudents(Student arr[15])
 {
     for (int i = 0; i < 10; i++)
@@ -28,15 +29,15 @@ void PrintVectorElements(vector<Student> vector)
         cout << vector[i].gropupNumber << endl;
     }
 }
-void PrintList(list<Student> list)
-{
-    for (auto it : list)
-    {
-        cout << it.Name << endl;
-        cout << it.age << endl;
-        cout << it.gropupNumber << endl;
-    }
-}
+//void PrintList(list<Student> list)
+//{
+//    for (auto it : list)
+//    {
+//        cout << it.Name << endl;
+//        cout << it.age << endl;
+//        cout << it.gropupNumber << endl;
+//    }
+//}
 void PrintSetCollection(set<int> s)
 {
     for (auto item : s)
@@ -44,9 +45,31 @@ void PrintSetCollection(set<int> s)
         cout << item << endl;
     }
 }
+void PrintDoubleList(strlist::list **head)
+{
+    if ((*head) != NULL)
+    {
+        strlist::list* temp = new strlist::list;
+        temp = (*head);
+        while (temp->next != NULL)
+        {
+            cout << temp->value << endl;
+            temp = temp->next;
+        }
+        cout << temp->value << endl;
+    }
+}
 int main()
 {
-    Student students[15] = 
+    strlist::list** head = new strlist::list*;
+    *head = NULL;
+    DoublyLinkedList ll;
+    ll.PushFront(head, 1);
+    ll.PushBack(head, 2);
+    ll.PushBack(head, 5);
+    ll.PushFront(head, 3);
+    PrintDoubleList(head);
+    /*Student students[15] = 
     {
         Student{ "aStudent-1", 16, "G1" },
         Student{ "dStudent-2", 16, "G1" },
@@ -83,7 +106,7 @@ int main()
     }
     s = setH.GetSetCollection();
     cout << "**************" << endl;
-    PrintSetCollection(s);
+    PrintSetCollection(s);*/
     //VectorHelper vectH;
     //vectH.InsertArrayInVector(students, 10);
     //vectH.SortVectorByNameStudents();

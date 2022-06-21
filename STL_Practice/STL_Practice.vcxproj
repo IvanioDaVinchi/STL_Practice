@@ -151,6 +151,7 @@
     <ClInclude Include="DoublyLinkedList.h" />
     <ClInclude Include="ListHelper.h" />
     <ClInclude Include="SetHelper.h" />
+    <ClInclude Include="StructList.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="ThreadWorker.h" />
     <ClInclude Include="VectorHelper.h" />
